@@ -1,0 +1,17 @@
+package test;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+
+public class Bayes {
+
+	public void calcBayes(List<String> goal,List<String> sample1,List<String> sample2,List<String>sample3, Set<String> all,String location,String fileName ) throws IOException
+	{
+		BayesReader reader = new BayesReader();
+		System.out.println(goal.toString());
+		List<String> results = new ArrayList<String>();
+		System.out.println((reader.read( goal,sample1,sample2,sample3, all,location, fileName).toString()));
+	}
+}

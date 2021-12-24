@@ -1,0 +1,12 @@
+package test;
+
+import java.util.List;
+import java.util.Set;
+
+public class Bayes {
+
+	public void calcBayes(List<String> goal,List<String> sample1,List<String> sample2,List<String> sample33 Set<String> all )
+	{
+		
+	}
+}

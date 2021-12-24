@@ -1,0 +1,23 @@
+package test;
+
+import java.util.List;
+import java.util.Set;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+
+public class BayesCalc {
+	
+	public void finalCalc(List<String> tokens,List<String> goal,List<String> sample1,List<String> sample2,List<String> sample3, Set<String> all)
+	{
+		List<Double> probs = new ArrayList<Double>();
+		Set<String> tokenf = new HashSet<>(tokens);
+		Double pay,payda;
+		pay=payda=0.0;
+		for (String word : tokenf)
+		{
+			pay= (double) Collections.frequency(goal, word)+1;
+		}
+		
+	}
+}

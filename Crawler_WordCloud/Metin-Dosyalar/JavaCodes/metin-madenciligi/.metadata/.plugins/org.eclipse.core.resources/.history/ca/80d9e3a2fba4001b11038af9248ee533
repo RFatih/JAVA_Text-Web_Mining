@@ -1,0 +1,11 @@
+package trainset;
+
+import java.util.List;
+
+public class StopWords {
+
+	public List<String> removeStopWords(List<String> list,List<String> sWords)
+	{
+		return list;
+	}
+}

@@ -1,0 +1,9 @@
+package trainset;
+
+public class gen {
+
+	public void gen(String file)
+	{
+		
+	}
+}

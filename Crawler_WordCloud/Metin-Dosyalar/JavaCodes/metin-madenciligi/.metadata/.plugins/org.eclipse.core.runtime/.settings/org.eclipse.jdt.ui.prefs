@@ -1,0 +1,9 @@
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="trainset.TextReader"><rhs name\="trainset.TextReader"/></lhs><lhs name\="trainset.StopWords"><rhs name\="trainset.StopWords"/></lhs><lhs name\="trainset.PunctuationAndDigits"><rhs name\="trainset.PunctuationAndDigits"/></lhs><lhs name\="java.lang.CharSequence"><rhs name\="java.lang.String"/></lhs><lhs name\="java.lang.constant.Constable"><rhs name\="java.lang.String"/></lhs><lhs name\="java.lang.constant.ConstantDesc"><rhs name\="java.lang.String"/></lhs><lhs name\="trainset.Training"><rhs name\="trainset.Training"/></lhs><lhs name\="trainset.Stemming"><rhs name\="trainset.Stemming"/></lhs><lhs name\="java.util.Collection"><rhs name\="java.util.ArrayList"/></lhs><lhs name\="java.lang.Iterable"><rhs name\="java.util.ArrayList"/></lhs><lhs name\="java.util.List"><rhs name\="java.util.ArrayList"/></lhs><lhs name\="trainset.TF_IDF"><rhs name\="trainset.TF_IDF"/></lhs><lhs name\="trainset.TestReader"><rhs name\="trainset.TestReader"/></lhs><lhs name\="trainset.gen"><rhs name\="trainset.gen"/></lhs><lhs name\="trainset.TokenReader"><rhs name\="trainset.TokenReader"/></lhs><lhs name\="test.Testing"><rhs name\="test.Testing"/></lhs><lhs name\="test.TokenReader"><rhs name\="test.TokenReader"/></lhs><lhs name\="test.BayesReader"><rhs name\="test.BayesReader"/></lhs><lhs name\="test.BayesCalc"><rhs name\="test.BayesCalc"/></lhs><lhs name\="test.Bayes"><rhs name\="test.Bayes"/></lhs></history>
+content_assist_number_of_computers=12
+content_assist_proposals_background=255,255,255
+content_assist_proposals_foreground=0,0,0
+eclipse.preferences.version=1
+org.eclipse.jdt.ui.formatterprofiles.version=21
+spelling_locale_initialized=true
+useAnnotationsPrefPage=true
+useQuickDiffPrefPage=true

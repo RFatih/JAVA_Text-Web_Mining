@@ -1,0 +1,16 @@
+package trainset;
+
+import java.io.IOException;
+
+public class NLPApplication {
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		Training ekonomi=new Training();
+		ekonomi.Train("C:\\Users\\fatih\\OneDrive\\Masaüstü\\metin-madenciligi\\train\\ekonomi");
+		
+		Training magazin = new Training();
+		magazin.Train("C:\\Users\\fatih\\OneDrive\\Masaüstü\\metin-madenciligi\\train\\magazin");
+	}
+
+}

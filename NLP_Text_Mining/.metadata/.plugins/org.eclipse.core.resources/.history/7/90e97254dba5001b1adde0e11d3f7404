@@ -1,0 +1,68 @@
+package trainset;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import zemberek.tokenization.TurkishSentenceExtractor;
+import zemberek.tokenization.TurkishTokenizer;
+public class Training {
+
+	public void Train(String file, String fileName) throws IOException {
+		// TODO Auto-generated method stub
+		
+		TextReader reader= new TextReader();
+		String sentences=reader.readText(file, "ISO-8859-9","");
+		if(fileName!="ALL") {
+		String stopWords=reader.readText("C:\\Users\\fatih\\OneDrive\\Masaüstü\\metin-madenciligi\\stop-words","UTF-8"," ");
+        TurkishSentenceExtractor extractor = TurkishSentenceExtractor.DEFAULT;
+        sentences=sentences.toLowerCase();
+        List<String> cumleler = extractor.fromParagraph(sentences);
+        //System.out.println(cumleler);
+        TurkishTokenizer tokenizer = TurkishTokenizer.DEFAULT;
+        List<String> tokens = tokenizer.tokenizeToStrings(sentences);
+        List<String> sTokens = tokenizer.tokenizeToStrings(stopWords);
+        
+        //System.out.println(tokens);
+       // System.out.println(tokens);
+       // System.out.println(sTokens);
+        Stemming stemming = new Stemming();
+        List<String> stemmedResult = stemming.stems(tokens);
+        
+       
+       
+        StopWords stopWords2= new StopWords();
+        List<String> removedTokens = stopWords2.removeStopWords(stemmedResult, sTokens);
+       // System.out.println(tokens.size()+" "+ removedTokens.size());
+       //System.out.println(removedTokens);
+        
+        PunctuationAndDigits pD= new PunctuationAndDigits();
+        List<String> RemovedPD = pD.removePD(removedTokens);
+       // System.out.println(RemovedPD);
+        
+       
+      
+        Set<String> frequencies = new HashSet<>(RemovedPD);
+
+		 
+        for (String a: frequencies)
+        {
+            //System.out.println(a + "=" + Collections.frequency(RemovedPD, a));
+        }
+      
+        System.out.println(frequencies.size());
+
+        FileWriter myWriter = new FileWriter(fileName+".txt");
+        myWriter.write(RemovedPD.toString());
+        myWriter.close();
+		}
+		else
+		{
+			 TurkishTokenizer tokenizer = TurkishTokenizer.DEFAULT;
+		     List<String> tokens = tokenizer.tokenizeToStrings(sentences);
+		}
+	}
+
+}

@@ -1,0 +1,12 @@
+package trainset;
+
+public class NLPApplication {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Training ekonomi=new Training();
+		ekonomi.Train("C:\\Users\\fatih\\OneDrive\\Masaüstü\\metin-madenciligi\\train\\ekonomi");
+		
+	}
+
+}

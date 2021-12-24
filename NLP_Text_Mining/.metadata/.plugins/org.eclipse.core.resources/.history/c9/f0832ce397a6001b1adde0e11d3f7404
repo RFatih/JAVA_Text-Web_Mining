@@ -1,0 +1,9 @@
+package test;
+
+public class Bayes {
+
+	public void calcBayes()
+	{
+		
+	}
+}

@@ -1,0 +1,40 @@
+package trainset;
+
+import java.io.IOException;
+
+public class NLPApplication {
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		Training ekonomi=new Training();
+		ekonomi.Train("C:\\Users\\fatih\\OneDrive\\Masaüstü\\metin-madenciligi\\train\\ekonomi","EkonomiTrain");
+		
+		Training magazin = new Training();
+		magazin.Train("C:\\Users\\fatih\\OneDrive\\Masaüstü\\metin-madenciligi\\train\\magazin","MagazinTrain");
+	
+		Training saglik = new Training();
+		saglik.Train("C:\\Users\\fatih\\OneDrive\\Masaüstü\\metin-madenciligi\\train\\saglik","SaglikTrain");
+	
+		Training spor = new Training();
+		spor.Train("C:\\Users\\fatih\\OneDrive\\Masaüstü\\metin-madenciligi\\train\\spor","SporTrain");
+		
+		Training testEkonomi = new Training();
+		testEkonomi.Train("C:\\Users\\fatih\\OneDrive\\Masaüstü\\metin-madenciligi\\test\\ekonomi","EkonomiTest");
+		
+		Training testMagazin = new Training();
+		testMagazin.Train("C:\\Users\\fatih\\OneDrive\\Masaüstü\\metin-madenciligi\\test\\magazin","MagazinTest");
+	
+		Training testSaglik = new Training();
+		testSaglik.Train("C:\\Users\\fatih\\OneDrive\\Masaüstü\\metin-madenciligi\\test\\saglik","SaglikTest");
+	
+		Training testSpor = new Training();
+		testSpor.Train("C:\\Users\\fatih\\OneDrive\\Masaüstü\\metin-madenciligi\\test\\spor","SporTest");
+		
+		Training all= new Training();
+		all.Train("C:\\Users\\fatih\\OneDrive\\Masaüstü\\metin-madenciligi\\All-train","ALL");
+		
+		gen gen = new  gen();
+		gen.gen("C:\\Users\\fatih\\OneDrive\\Masaüstü\\metin-madenciligi\\All-train");
+	}
+
+}

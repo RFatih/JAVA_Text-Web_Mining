@@ -1,0 +1,11 @@
+package trainset;
+
+import java.io.IOException;
+
+public class Testing {
+	public void caclFreq(String file) throws IOException
+	{
+		TextReader reader= new TextReader();
+		String sentences=reader.readText(file, "ISO-8859-9","");
+	}
+}

@@ -1,0 +1,8 @@
+package trainset;
+
+public class Testing {
+	public void caclFreq(String file)
+	{
+		
+	}
+}

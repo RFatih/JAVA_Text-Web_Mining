@@ -1,0 +1,11 @@
+package test;
+
+import java.util.List;
+
+public class BayesCalc {
+	
+	public void finalCalc(List<String> goal,List<String> sample1,List<String> sample2,List<String> sample3)
+	{
+		
+	}
+}

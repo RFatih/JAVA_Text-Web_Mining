@@ -1,0 +1,15 @@
+package trainset;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Testing {
+	public void caclFreq(String location) throws IOException
+	{
+		TestReader reader= new TestReader();
+		List<String> tfIdf = new ArrayList<String>();
+	}
+}
+
+	

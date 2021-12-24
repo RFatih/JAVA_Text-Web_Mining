@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
+    <fullyQualifiedTypeName name="java.io.InputStream"/>
+    <fullyQualifiedTypeName name="java.io.FileInputStream"/>
+    <fullyQualifiedTypeName name="java.lang.StringIndexOutOfBoundsException"/>
+    <fullyQualifiedTypeName name="java.util.Set"/>
+    <fullyQualifiedTypeName name="java.util.HashSet"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="java.util.Comparator"/>
+    <fullyQualifiedTypeName name="java.io.File"/>
+    <fullyQualifiedTypeName name="java.io.FileWriter"/>
+    <fullyQualifiedTypeName name="zemberek.morphology.TurkishMorphology"/>
+    <fullyQualifiedTypeName name="zemberek.morphology.analysis.WordAnalysis"/>
+    <fullyQualifiedTypeName name="zemberek.morphology.analysis.SingleAnalysis"/>
+    <fullyQualifiedTypeName name="trainset.Stemming"/>
+    <fullyQualifiedTypeName name="trainset.Training"/>
+    <fullyQualifiedTypeName name="trainset.TF_IDF"/>
+    <fullyQualifiedTypeName name="trainset.TestReader"/>
+    <fullyQualifiedTypeName name="trainset.TextReader"/>
+    <fullyQualifiedTypeName name="trainset.gen"/>
+    <fullyQualifiedTypeName name="trainset.TokenReader"/>
+    <fullyQualifiedTypeName name="test.Testing"/>
+    <fullyQualifiedTypeName name="trainset.NLPApplication"/>
+    <fullyQualifiedTypeName name="trainset.PunctuationAndDigits"/>
+    <fullyQualifiedTypeName name="trainset.StopWords"/>
+    <fullyQualifiedTypeName name="test.TokenReader"/>
+    <fullyQualifiedTypeName name="test.BayesReader"/>
+    <fullyQualifiedTypeName name="test.BayesCalc"/>
+    <fullyQualifiedTypeName name="test.Bayes"/>
+    <fullyQualifiedTypeName name="java.util.Collections"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.stream.Collectors"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+</qualifiedTypeNameHistroy>

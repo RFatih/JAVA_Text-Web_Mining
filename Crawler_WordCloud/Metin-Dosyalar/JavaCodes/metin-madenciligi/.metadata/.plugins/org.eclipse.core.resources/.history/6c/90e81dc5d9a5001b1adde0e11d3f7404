@@ -1,0 +1,12 @@
+package trainset;
+
+import java.io.IOException;
+
+public class Testing {
+	public void caclFreq(String location) throws IOException
+	{
+		
+	}
+}
+
+	

@@ -1,0 +1,54 @@
+package test;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import trainset.PunctuationAndDigits;
+import zemberek.tokenization.TurkishTokenizer;
+
+public class TF {
+
+	public List<String> calculateTf (String file,Set<String> freq) throws IOException
+	{
+		List<String> rValue = new ArrayList<String>();
+		TurkishTokenizer tokenizer = TurkishTokenizer.DEFAULT;
+		System.out.println(file);
+	    List<String> tokens = tokenizer.tokenizeToStrings(file);
+	    PunctuationAndDigits pd = new PunctuationAndDigits();
+	    tokens=pd.removePD(tokens);
+	    Set<String> txtFreq = new HashSet<>(tokens);
+	    TokenReader reader = new TokenReader();
+	    List<String> allWords= reader.read("C:\\Users\\fatih\\OneDrive\\Masaüstü\\metin-madenciligi\\AllWords", "allWords");
+	    Double tf=0.0;
+	    
+	   
+	    for (String word : freq)
+	    {
+	    	String max = findMax(word,txtFreq,tokens);
+	    	tf = (double) (Collections.frequency(tokens, word) /Collections.frequency(tokens, max));
+	    	rValue.add(tf.toString());
+	    }
+	    
+	    System.out.println(rValue);
+		return rValue;
+	}
+	public String findMax(String myWord,Set<String> freq,List<String> text)
+	{
+		String ans="";
+		int maks=0;
+		 for (String word : freq)
+		    {
+		    	if(maks<Collections.frequency(text, word) && word!=myWord)
+		    	{
+		    		maks = Collections.frequency(text, word);
+		    		ans=word;
+		    	}
+		    }
+		System.out.println(ans + maks);
+		return ans;
+	}
+}

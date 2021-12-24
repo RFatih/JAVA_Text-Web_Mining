@@ -1,0 +1,10 @@
+package trainset;
+
+public class gen {
+
+	public void gen(String file)
+	{
+		TextReader reader = new TextReader();
+		
+	}
+}

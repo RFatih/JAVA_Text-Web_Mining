@@ -1,0 +1,52 @@
+package trainset;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.HashSet;
+import java.util.Random;
+import java.util.Set;
+
+public class TextReader {
+
+	public String readText(String newFile, String format,String space) throws IOException
+	{
+		Random rand = new Random();
+		File dir = new File(newFile);
+		File[] files = dir.listFiles();
+		String sentences="";
+		int num;
+		Set<String> randTxtFiles = new HashSet<>();
+		int i=0;
+		while(i<=Math.round(files.length*30/100))
+		{
+			num=rand.nextInt(files.length);
+			if(!randTxtFiles.contains(num))
+			{
+				randTxtFiles.add(num+".txt");
+			}
+		}
+        for (File file : files) {
+            if(file.isFile()) {
+                BufferedReader inputStream =new BufferedReader(new InputStreamReader(new FileInputStream(file),format));
+                String line;
+                try {
+                    
+                    while ((line = inputStream.readLine()) != null) {
+                        sentences+= space+ line;
+                    }
+                }catch(IOException e) {
+                	System.out.println(e);
+                }
+                finally {
+                    if (inputStream != null) {
+                        inputStream.close();
+                    }
+                }
+            }
+        }
+        return sentences;
+	}
+}

@@ -1,0 +1,24 @@
+package trainset;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import zemberek.morphology.TurkishMorphology;
+import zemberek.morphology.analysis.SingleAnalysis;
+import zemberek.morphology.analysis.WordAnalysis;
+
+public class Stemming {
+	
+	public List<String> stems(List<String> list)
+	{
+		TurkishMorphology morph = TurkishMorphology.createWithDefaults();
+		WordAnalysis = morph.analyze(list);
+		List<String> rValue = new ArrayList<String>();
+		for (SingleAnalysis analysis : list)
+		{
+			
+		}
+		return rValue;
+		
+	}
+}

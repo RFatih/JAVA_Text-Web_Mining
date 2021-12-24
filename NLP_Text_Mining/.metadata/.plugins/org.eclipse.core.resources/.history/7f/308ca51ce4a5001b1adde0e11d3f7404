@@ -1,0 +1,18 @@
+package test;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+
+public class Testing {
+	public void caclFreq(String location,String fileName) throws IOException
+	{
+		TestReader reader= new TestReader();
+		List<String> tf = new ArrayList<String>();
+		tf=reader.read(location,freq,fileName);
+		System.out.println(tf);
+	}
+}
+
+	

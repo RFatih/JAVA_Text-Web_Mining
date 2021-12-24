@@ -1,0 +1,12 @@
+package trainset;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class PunctuationAndDigits {
+
+	public List<String> removePD(List<String> list)
+	{
+		List<String> rValue = new ArrayList<String>();
+	}
+}

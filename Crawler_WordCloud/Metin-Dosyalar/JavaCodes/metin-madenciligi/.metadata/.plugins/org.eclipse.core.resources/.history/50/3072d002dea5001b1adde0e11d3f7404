@@ -1,0 +1,16 @@
+package trainset;
+
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class gen {
+
+	public void gen(String file) throws IOException
+	{
+		TextReader reader = new TextReader();
+		String a= reader.readText(file, "UTF-8", "");
+		FileWriter myWriter = new FileWriter(fileName+".txt");
+	     myWriter.write(frequencies.toString());
+	     myWriter.close();
+	}
+}

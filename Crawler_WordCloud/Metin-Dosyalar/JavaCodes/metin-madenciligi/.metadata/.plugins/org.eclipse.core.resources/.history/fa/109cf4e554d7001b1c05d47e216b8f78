@@ -1,0 +1,165 @@
+package trainset;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Hashtable;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map.Entry;
+import java.util.Set;
+import java.util.stream.Stream;
+
+import zemberek.tokenization.TurkishTokenizer;
+public class Training {
+	private Set<String> frequencies = new HashSet<>();
+	private List<String> RemovedPD = new ArrayList<String>();
+
+	public List<String> getRemovedPD() {
+		return RemovedPD;
+	}
+
+	public void setRemovedPD(List<String> removedPD) {
+		RemovedPD = removedPD;
+	}
+
+	public Set<String> getFrequencies() {
+		return frequencies;
+	}
+
+	public void setFrequencies(Set<String> frequencies) {
+		this.frequencies = frequencies;
+	}
+
+	public void Train(String file, String fileName) throws IOException {
+		// TODO Auto-generated method stub
+
+		TextReader reader= new TextReader();
+		List<String> sentences=reader.readText(file, "ISO-8859-9","");
+		HashMap<String,Integer> my_dict = new HashMap<String,Integer>();
+		List<String> stopWords=reader.readText("/media/fatih/4602A96202A957A7/new/Study_School/metin-madenciligi/stop-words","UTF-8"," ");
+       // TurkishSentenceExtractor extractor = TurkishSentenceExtractor.DEFAULT;
+        String stopWord = stopWords.toString();
+		for(String sentence : sentences)
+        {
+		sentence=sentence.toLowerCase();
+        //List<String> cumleler = extractor.fromParagraph(sentences);
+        //System.out.println(cumleler);
+        System.out.println("Tokenlara ayırmaya başladı...");
+        TurkishTokenizer tokenizer = TurkishTokenizer.DEFAULT;
+        List<String> tokens = tokenizer.tokenizeToStrings(sentence);
+        List<String> sTokens = tokenizer.tokenizeToStrings(stopWord);
+        
+        //System.out.println(tokens);
+       // System.out.println(tokens);
+       // System.out.println(sTokens);
+        System.out.println("Köklerine ayırmaya başladı...");
+        Stemming stemming = new Stemming();
+        List<String> stemmedResult = stemming.stems(tokens);
+        
+       
+       System.out.println("Gereksiz kelimeler atılıyor..");
+        StopWords stopWords2= new StopWords();
+        List<String> removedTokens = stopWords2.removeStopWords(stemmedResult, sTokens);
+       // System.out.println(tokens.size()+" "+ removedTokens.size());
+       //System.out.println(removedTokens);
+        
+        System.out.println("Sayı ve işaretler atılıyor..");
+        PunctuationAndDigits pD= new PunctuationAndDigits();
+        List<String> RemovedPD = pD.removePD(removedTokens);
+       // System.out.println(RemovedPD);
+        
+        this.setRemovedPD(RemovedPD);
+      
+        Set<String> frequencies = new HashSet<>(RemovedPD);
+        
+        for (String uniqeWord : frequencies)
+        {
+        	if(my_dict.containsKey(uniqeWord))
+        		my_dict.put(uniqeWord,my_dict.get(uniqeWord)+1);
+        	else
+        		my_dict.put(uniqeWord,1);
+        }
+       
+        System.out.println(my_dict);
+        //List<Entry<String, Integer>> list = new LinkedList<Entry<String, Integer>>(my_dict.entrySet());  
+        
+       
+	} 	
+		String sentence=sentences.toString();
+		 System.out.println("Tokenlara ayırmaya başladı...");
+	        TurkishTokenizer tokenizer = TurkishTokenizer.DEFAULT;
+	        List<String> tokens = tokenizer.tokenizeToStrings(sentence);
+	        List<String> sTokens = tokenizer.tokenizeToStrings(stopWord);
+	        
+	        //System.out.println(tokens);
+	       // System.out.println(tokens);
+	       // System.out.println(sTokens);
+	        System.out.println("Köklerine ayırmaya başladı...");
+	        Stemming stemming = new Stemming();
+	        List<String> stemmedResult = stemming.stems(tokens);
+	        
+	       
+	       System.out.println("Gereksiz kelimeler atılıyor..");
+	        StopWords stopWords2= new StopWords();
+	        List<String> removedTokens = stopWords2.removeStopWords(stemmedResult, sTokens);
+	       // System.out.println(tokens.size()+" "+ removedTokens.size());
+	       //System.out.println(removedTokens);
+	        
+	        System.out.println("Sayı ve işaretler atılıyor..");
+	        PunctuationAndDigits pD= new PunctuationAndDigits();
+	        List<String> RemovedPD = pD.removePD(removedTokens);
+	       // System.out.println(RemovedPD);
+	        
+	        this.setRemovedPD(RemovedPD);
+	      
+	        Set<String> frequencies = new HashSet<>(RemovedPD);
+	        
+	        for (String uniqeWord : frequencies)
+	        {
+	        	if(my_dict.containsKey(uniqeWord))
+	        		my_dict.put(uniqeWord,my_dict.get(uniqeWord)+1);
+	        	else
+	        		my_dict.put(uniqeWord,1);
+	        }
+		my_dict.keySet().remove("");
+		my_dict=sortHashMapByValues(my_dict);
+		FileWriter myWriter = new FileWriter("Dict"+".txt");
+        myWriter.write(my_dict.toString());
+        myWriter.close();}
+	public LinkedHashMap<String, Integer> sortHashMapByValues(
+	        HashMap<String, Integer> passedMap) {
+	    List<String> mapKeys = new ArrayList<>(passedMap.keySet());
+	    List<Integer> mapValues = new ArrayList<>(passedMap.values());
+	    Collections.sort(mapValues);
+	    Collections.sort(mapKeys);
+	    Collections.reverse(mapValues);
+	    Collections.reverse(mapKeys);
+
+	    LinkedHashMap<String, Integer> sortedMap =
+	        new LinkedHashMap<>();
+
+	    Iterator<Integer> valueIt = mapValues.iterator();
+	    while (valueIt.hasNext()) {
+	        Integer val = valueIt.next();
+	        Iterator<String> keyIt = mapKeys.iterator();
+
+	        while (keyIt.hasNext()) {
+	        	String key = keyIt.next();
+	            Integer comp1 = passedMap.get(key);
+	            Integer comp2 = val;
+
+	            if (comp1.equals(comp2)) {
+	                keyIt.remove();
+	                sortedMap.put(key, val);
+	                break;
+	            }
+	        }
+	    }
+	    return sortedMap;
+	}
+}

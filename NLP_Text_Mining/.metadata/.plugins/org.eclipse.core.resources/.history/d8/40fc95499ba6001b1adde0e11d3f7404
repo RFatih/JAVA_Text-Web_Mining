@@ -1,0 +1,13 @@
+package test;
+
+import java.util.List;
+import java.util.Set;
+
+public class Bayes {
+
+	public void calcBayes(List<String> goal, Set<String> all,String fileName )
+	{
+		BayesReader reader = new BayesReader();
+		reader.read(null, all, fileName, goal, all)
+	}
+}

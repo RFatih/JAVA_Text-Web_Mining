@@ -1,0 +1,14 @@
+package test;
+
+import java.io.IOException;
+import java.util.List;
+import java.util.Set;
+
+public class Bayes {
+
+	public void calcBayes(List<String> goal, Set<String> all,String fileName,String location ) throws IOException
+	{
+		BayesReader reader = new BayesReader();
+		reader.read( goal, all,location, fileName);
+	}
+}

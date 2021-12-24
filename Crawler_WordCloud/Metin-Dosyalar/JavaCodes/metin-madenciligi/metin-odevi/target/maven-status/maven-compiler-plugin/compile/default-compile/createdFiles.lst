@@ -1,0 +1,13 @@
+test/TestReader.class
+trainset/Stemming.class
+test/Bayes.class
+trainset/NLPApplication.class
+test/Testing.class
+trainset/PunctuationAndDigits.class
+test/BayesReader.class
+trainset/StopWords.class
+test/BayesCalc.class
+trainset/TextReader.class
+test/TokenReader.class
+test/TF.class
+trainset/Training.class

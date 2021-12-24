@@ -1,0 +1,31 @@
+Ramazan Fatih Karadeniz
+2017280029
+
+PROJE RAPORU:
+	Projeye öncelikle deu ana sayfasından alt url lere erişmek için yöntem arayarak
+başladım. Bu süreçte beautifulsoup ile tek bir sayfanın içindeki tüm url leri alabileceğimi gördüm.
+Ben de her sayfadaki url leri toplayıp bu urller için aynı işlemi tekrar eder bir döngü fonksiyonu yazdım.
+Fonksiyonun içinde ziyaret edilmemiş url leri ziyaret edildi listesine atıyor. Ziyarat edilmemiş listesi boşalana
+veya verilen url sınırına ulaşana kadar fonksiyon devam ediyor. Ben 38 bin url ye ulaştığında yeterli olacağını
+düşünüp programı durdurdum.
+
+	İkinci olarak aldığım urllerden body contenti çekip bu contenti frekanslarına ayırmak için tokenize etmem 
+gerekiyordu. Contenti çekmek için python ile yine beautifulsoup kütüphanesini kullandım. Çektiğim contenti 
+tokenize etmek, stemming, stopwords gibi methodları kullanarak daha işe yarar hale getirmek için de daha önce
+Java dilinde yazdığım zemberek kütüphanesini içeren projeye input olarak verip toplam frekansı elde ettim.
+
+	Son olarak elde ettiğim frekansı pythonda WordCloud kütüphanesini kullnarak görselleştirdim. Ayrıca elde 
+ettiğim frekans ve web sayfa bazlı frekans değerlerini csv olarak kaydedip bu iki değeri kullanarak frekans değerine göre
+sıralanmış bir excel dosyasında tablo olarak kaydettim.
+	
+	Ödevin ikinci kısmı için ise url leri ziyaret ederken, gittiğim her url için bir node, bu url nin içinde bulunan
+her url için ise bir edge oluşturup web grafını oluşturdum. Daha sonra bu graphı networkx adlı kütüphanenin methodlarını
+kullanarak istenilen 3 analizi yaptım. Elde ettiğim çıktıları scientefic notation dan float a dönüştürüp sıraladım ve csv
+formatında kaydettim. Oluşan 3 csv dosyasını bir excel dosyasında birleştirip table oluşturdum.
+
+Çalıştırma şeması:
+
+Crawler.py -> tokenizer.py -> NLPApplication.java -> word_cloud.py -> centrality.py
+
+Not: Grafı da ilk aşamada oluşturması için Crawler.py ve centrality.py dosyaları birleştirilip tek bir dosya yapılabilir.
+Ancak aşama aşama ilerlemesi için bu şekilde yaptım.
